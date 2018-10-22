@@ -1,6 +1,7 @@
-#img1, #img2, #img3, #img4, #wins, #losses, #player-total-score, #player-currentNum, #randomNum, .main-col {
+ #wins, #losses, #player-total-score, #player-currentNum, #randomNum, .main-col {
     border:orange 5px solid;
 }
+
 
 body {
     background-color:lightseagreen;
@@ -10,4 +11,13 @@ body {
 
 .main-col, #randomNum, #player-total-score, #player-currentNum, #wins, #losses {
     background-color:lightcoral;
+}
+
+header {
+    height:75px;
+}
+
+.title {
+    margin: 0 auto;
+    padding-top: 20px;
 }
