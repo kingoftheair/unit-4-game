@@ -19,10 +19,6 @@ function randomCrystalNum() {
     img2 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
     img3 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
     img4 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
-    $("#img1").text(img1);
-    $("#img2").text(img2);
-    $("#img3").text(img3);
-    $("#img4").text(img4);
 } 
 
 //function used to generate new random number after win or loss and then display new number
