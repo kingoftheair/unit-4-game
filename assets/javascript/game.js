@@ -1,14 +1,16 @@
-var randomNum = Math.floor(Math.random() * (120 - 19)) + 19;
+//list of variables used
+var randomNum = Math.floor(Math.random() * (120 - 19)) + 19; //generates random number 19-120 that player must reach
 var wins = 0;
 var losses = 0;
 var currentScore = 0;
+//generates random number 1-12 for each of the crystal images
 var img1 = Math.floor(Math.random() * 12) + 1;
 var img2 = Math.floor(Math.random() * 12) + 1;
 var img3 = Math.floor(Math.random() * 12) + 1;
 var img4 = Math.floor(Math.random() * 12) + 1;
 
 
-//generates new number for each crystal
+//function that resets random 1-12 number for crystals
 function randomcrystalNum() {
     img1 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
     img2 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
@@ -28,7 +30,7 @@ function gamePlay(){
         $('#player-currentNum').text(currentScore);
         alert("You win, you are a regular crystal baller!");
         randomCrystalNum();  //call function to reset game
-    }  else if(currentScore > randomNum){   //keeping trac of player losses
+    }  else if(currentScore > randomNum){   //keeping track of player losses
 		losses++;
 		$('#losses').html(losses);
 		$('#wins-or-losses').text('You lose!');
@@ -42,11 +44,11 @@ function gamePlay(){
 }
 
 
-
+//generates random number to display
 $('#randomNum').text(randomNum);
 
 
-
+//when click on an crystal image will add number to current score
 $('#img1').on('click', function(){
 	currentScore += img1;
 	$('#player-currentNum').text(currentScore);
@@ -73,6 +75,8 @@ $('#img4').on('click', function(){
 	$('#player-currentNum').text(currentScore);
 	gamePlay();
 });
+
+
 //var crystalNum = Math.floor(Math.random() * 12) + 1;
 
 
