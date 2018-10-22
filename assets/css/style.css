@@ -21,3 +21,11 @@ header {
     margin: 0 auto;
     padding-top: 20px;
 }
+
+.fortuneimg {
+    float:right;
+    position:absolute;
+    margin-left:600px;
+    margin-top: -400px;
+    border: orange 5px solid;
+}
