@@ -1,9 +1,11 @@
  #player-total-score, #randomNum, .main-col {
     border:orange 5px solid;
+    box-shadow: 1px 1px 5px;
 }
 
 #randomNum {
     text-align:center;
+    box-shadow: 1px 1px 5px;
 
 }
 
@@ -16,10 +18,12 @@ body {
 
 .main-col, #randomNum, #player-total-score, #player-currentNum, #wins, #losses {
     background-color:lightcoral;
+    box-shadow: 1px 1px 5px;
 }
 
 header {
     height:75px;
+    box-shadow: 1px 1px 5px;
 }
 
 .jumbotron {
@@ -36,16 +40,19 @@ header {
     margin-left:600px;
     margin-top: -400px;
     border: orange 5px solid;
+    box-shadow: 1px 1px 5px;
 }
 
 .currentNum {
     border: solid 5px orange;
     background-color:lightcoral;
     text-align:center;
+    box-shadow: 1px 1px 5px;
 }
 
 .wins, .losses {
     background-color:lightcoral;
     border: solid 5px orange;
     text-align:center;
+    box-shadow: 1px 1px 5px
 }
