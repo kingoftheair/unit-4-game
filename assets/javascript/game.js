@@ -1,5 +1,5 @@
 //list of variables used
-var randomNum = Math.floor(Math.random() * (120 - 19)) + 19; //generates random number 19-120 that player must reach
+var randomNum = Math.floor(Math.random() * (120 - 19) + 19); //generates random number 19-120 that player must reach
 var wins = 0;
 var losses = 0;
 var currentScore = 0;
@@ -10,7 +10,7 @@ var img3 = Math.floor(Math.random() * 12) + 1;
 var img4 = Math.floor(Math.random() * 12) + 1;
 
 
-//function that resets random 1-12 number for crystals
+//function that resets random 1-12 number for crystal images
 function randomcrystalNum() {
     img1 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
     img2 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
@@ -18,37 +18,50 @@ function randomcrystalNum() {
     img4 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
 } 
 
+//function used to generate new random number after win or loss
+function randomNumGen() {
+    randomNum = Math.floor(Math.random() * (120 - 19) + 19);
+    $('#randomNum').text(randomNum);
+}
 //keeps track of player wins
 function gamePlay(){
 	if(currentScore === randomNum){
 		wins++;
-		$('#wins').text(wins);
-		$('#wins-or-losses').text('You win!');
-		randomNum = Math.floor(Math.random()*(120 - 19 + 1) + 19);
-		$('#randomNum').text(randomNum);
+        $('#wins').text(wins);//displays win in html
+    
+        //$('#wins-or-losses').text('You win!');
+		//randomNum = Math.floor(Math.random()*(120 - 19 + 1) + 19);
+       // $('#randomNum').text(randomNum);
+
+        //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
-        $('#player-currentNum').text(currentScore);
+        $('#player-currentNum').text(currentScore); 
         alert("You win, you are a regular crystal baller!");
-        randomCrystalNum();  //call function to reset game
+        randomNumGen(); //call funtion to reset rando number after win
+        randomCrystalNum();  //call function to reset random number for crystal images
     }  else if(currentScore > randomNum){   //keeping track of player losses
 		losses++;
-		$('#losses').html(losses);
-		$('#wins-or-losses').text('You lose!');
-		radnomNum = Math.floor(Math.random()*(120 - 19 + 1) + 19);
-		$('#randomNum').text(randomNum);
+        $('#losses').html(losses); //displays loss in html
+        
+		//$('#wins-or-losses').text('You lose!');
+		//radnomNum = Math.floor(Math.random()*(120 - 19 + 1) + 19);
+       // $('#randomNum').text(randomNum);
+
+          //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
         $('#player-currentNum').text(currentScore);
         alert("You lose, and now you must continue onwards for humankind's fate rest in your hands...");
-        randomCrystalNum(); // call function to reset game
+        randomNumGen(); //call function to reset random number after loss
+        randomCrystalNum(); // call function to reset random number for crystal images
 	}
 }
 
 
-//generates random number to display
+//displays random number for user to reach
 $('#randomNum').text(randomNum);
 
 
-//when click on an crystal image will add number to current score
+//when click on an crystal image will add number to current score and then calls gameplay function
 $('#img1').on('click', function(){
 	currentScore += img1;
 	$('#player-currentNum').text(currentScore);
