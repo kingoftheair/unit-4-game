@@ -1,7 +1,10 @@
- #wins, #losses, #player-total-score, #player-currentNum, #randomNum, .main-col {
+ #player-total-score, #randomNum, .main-col {
     border:orange 5px solid;
 }
 
+#randomNum {
+    text-align:center;
+}
 
 body {
     background-color:lightseagreen;
@@ -17,9 +20,12 @@ header {
     height:75px;
 }
 
-.title {
+.jumbotron {
     margin: 0 auto;
     padding-top: 20px;
+    background-color:lightseagreen;
+    text-align:center;
+    height:130px;
 }
 
 .fortuneimg {
@@ -28,4 +34,16 @@ header {
     margin-left:600px;
     margin-top: -400px;
     border: orange 5px solid;
+}
+
+.currentNum {
+    border: solid 5px orange;
+    background-color:lightcoral;
+    text-align:center;
+}
+
+.wins, .losses {
+    background-color:lightcoral;
+    border: solid 5px orange;
+    text-align:center;
 }

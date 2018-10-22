@@ -8,7 +8,7 @@ var img3 = Math.floor(Math.random() * 12) + 1;
 var img4 = Math.floor(Math.random() * 12) + 1;
 
 
-//generates new random number on page
+//generates new number for each crystal
 function randomcrystalNum() {
     img1 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
     img2 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
@@ -16,7 +16,7 @@ function randomcrystalNum() {
     img4 = Math.floor(Math.random() *(12 - 1 + 1) + 1);
 } 
 
-//keeps track of losses and wins
+//keeps track of player wins
 function gamePlay(){
 	if(currentScore === randomNum){
 		wins++;
@@ -27,8 +27,8 @@ function gamePlay(){
 		currentScore = 0;
         $('#player-currentNum').text(currentScore);
         alert("You win, you are a regular crystal baller!");
-        randomCrystalNum();
-	} else if(currentScore > randomNum){
+        randomCrystalNum();  //call function to reset game
+    }  else if(currentScore > randomNum){   //keeping trac of player losses
 		losses++;
 		$('#losses').html(losses);
 		$('#wins-or-losses').text('You lose!');
@@ -37,7 +37,7 @@ function gamePlay(){
 		currentScore = 0;
         $('#player-currentNum').text(currentScore);
         alert("You lose, and now you must continue onwards for humankind's fate rest in your hands...");
-        randomCrystalNum();
+        randomCrystalNum(); // call function to reset game
 	}
 }
 

@@ -14,6 +14,12 @@
     <title>Unit-4-game index page</title>
 </head>
 <body>
+        <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                  <h1 class="display-4">Crystal Collectors</h1>
+                </div>
+              </div>
+    <!--
     <div class="container">
         <div class="row">
             <div class="col-4">
@@ -24,6 +30,7 @@
         <div class="col-8"></div>
         </div>
     </div>
+-->
     <hr>
     <div class="container" id="instructions">
         <div class="row">
@@ -52,8 +59,8 @@
                     <p></p>
                 </div>
                 <div class="col-2" >
-                    <p>Wins <span id="wins"></span></p>
-                    <p>Losses <span id="losses"></span></p>
+                    <p class="wins">Wins <span id="wins"></span></p>
+                    <p class="losses">Losses <span id="losses"></span></p>
                 </div>
                 <div class="col-7"></div>
             </div>
@@ -67,15 +74,16 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-6">
                     <hr>
                     <p> Your total score is:</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
-                    <p> Current Number Amount<span id="player-currentNum"></span></p>
+                <div class="col-1">
+                    <p class="currentNum"> <span id="player-currentNum"></span></p>
                 </div>
+                <div class="col-11"></div>
             </div>
         </div>
     </div>
