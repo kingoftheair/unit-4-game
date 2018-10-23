@@ -28,22 +28,27 @@ function randomNumGen() {
 }
 
 //functions used to call audio files
-    function first_song() {
-		document.getElementById('audiotag1').play();
-    }
-    
-    function second_song() {
+    function win_song() {
 		document.getElementById('audiotag2').play();
     }
     
-    function third_song() {
-        document.getElementById('audiotag3').play();
-        
+    function lose_song() {
+		document.getElementById('audiotag4').play();
     }
     
-    function fourth_song() {
-		document.getElementById('audiotag4').play();
-	}
+    function play() {
+        var audio = document.getElementById('audio');
+        if (audio.paused) {
+            audio.play();
+            $('#play').removeClass('glyphicon-play-circle')
+            $('#play').addClass('glyphicon-pause')
+        }else{
+            audio.pause();
+            audio.currentTime = 0
+            $('#play').addClass('glyphicon-play-circle')
+            $('#play').removeClass('glyphicon-pause')
+        }
+    }
 
 //keeps track of player wins
 function gamePlay(){
@@ -54,7 +59,7 @@ function gamePlay(){
         //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
         $("#player-currentNum").text(currentScore); 
-        second_song();
+        win_song(); //calls win audio 
         alert("You win, you are a regular crystal baller!");
         randomCrystalNum();  //call function to reset random number for crystal images
         randomNumGen(); //call funtion to reset random number after win
@@ -66,7 +71,7 @@ function gamePlay(){
         //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
         $("#player-currentNum").text(currentScore);
-        fourth_song();
+        lose_song(); //calls lose audio
         alert("You lose, and now you must continue onwards for humankind's fate rest in your hands...");
         randomCrystalNum(); // call function to reset random number for crystal images
         randomNumGen(); //call function to reset random number after loss

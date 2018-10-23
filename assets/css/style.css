@@ -22,6 +22,17 @@ body {
     margin-top:-200px;
 }
 
+.tunes {
+    position:relative;
+    float:right;
+    padding-left:600px;
+    padding-right:-200px;
+}
+
+tuneP {
+    position:absolute;
+}
+
 #content {
     width:100%;
 }
