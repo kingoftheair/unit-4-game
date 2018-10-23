@@ -37,7 +37,8 @@ function randomNumGen() {
     }
     
     function third_song() {
-		document.getElementById('audiotag3').play();
+        document.getElementById('audiotag3').play();
+        
     }
     
     function fourth_song() {
@@ -53,6 +54,7 @@ function gamePlay(){
         //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
         $("#player-currentNum").text(currentScore); 
+        second_song();
         alert("You win, you are a regular crystal baller!");
         randomCrystalNum();  //call function to reset random number for crystal images
         randomNumGen(); //call funtion to reset random number after win
@@ -64,6 +66,7 @@ function gamePlay(){
         //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
         $("#player-currentNum").text(currentScore);
+        fourth_song();
         alert("You lose, and now you must continue onwards for humankind's fate rest in your hands...");
         randomCrystalNum(); // call function to reset random number for crystal images
         randomNumGen(); //call function to reset random number after loss
@@ -71,17 +74,14 @@ function gamePlay(){
 }
 
 
-
 //displays random number for user to reach
 $("#randomNum").text(randomNum); {
 
+
 //when click on an crystal image will add number to current score and then calls gameplay function
 $("#img1").on("click", function(){
-    const rollSound = new Audio("../audio/marching.wav");
-    $("#img1").click(e => rollSound.play());
-	currentScore += img1;
+    currentScore += img1;
     $("#player-currentNum").text(currentScore);
-    first_song(); //calling audio function
     gamePlay();
 });
 
@@ -89,7 +89,6 @@ $("#img1").on("click", function(){
 $("#img2").on("click", function(){
 	currentScore += img2;
     $("#player-currentNum").text(currentScore);
-    second_song();//calling audio function
 	gamePlay();
 });
 
@@ -97,7 +96,6 @@ $("#img2").on("click", function(){
 $("#img3").on("click", function(){
 	currentScore += img3;
     $("#player-currentNum").text(currentScore);
-    third_song();//calling audio function
 	gamePlay();
 });
 
@@ -105,7 +103,6 @@ $("#img3").on("click", function(){
 $("#img4").on("click", function(){
 	currentScore += img4;
     $("#player-currentNum").text(currentScore);
-    fourth_song();//calling audio function
 	gamePlay();
 });
 }
