@@ -24,18 +24,19 @@ function randomCrystalNum() {
 //function used to generate new random number after win or loss and then display new number
 function randomNumGen() {
     randomNum = Math.floor(Math.random() * (120 - 19) + 19);
-    $('#randomNum').text(randomNum);
+    $("#randomNum").text(randomNum);
 }
 
 //keeps track of player wins
 function gamePlay(){
+    
 	if (currentScore === randomNum){
 		wins++;
-        $('#wins').text(wins);//displays win in html
+        $("#wins").text(wins);//displays win in html
 
         //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
-        $('#player-currentNum').text(currentScore); 
+        $("#player-currentNum").text(currentScore); 
         alert("You win, you are a regular crystal baller!");
         randomCrystalNum();  //call function to reset random number for crystal images
         randomNumGen(); //call funtion to reset random number after win
@@ -43,11 +44,11 @@ function gamePlay(){
     
     else if (currentScore > randomNum){   //keeping track of player losses
 		losses++;
-        $('#losses').html(losses); //displays loss in html
+        $("#losses").html(losses); //displays loss in html
 
         //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
-        $('#player-currentNum').text(currentScore);
+        $("#player-currentNum").text(currentScore);
         alert("You lose, and now you must continue onwards for humankind's fate rest in your hands...");
         randomCrystalNum(); // call function to reset random number for crystal images
         randomNumGen(); //call function to reset random number after loss
@@ -56,37 +57,37 @@ function gamePlay(){
 
 
 //displays random number for user to reach
-$('#randomNum').text(randomNum);
+$("#randomNum").text(randomNum); {
 
 
 //when click on an crystal image will add number to current score and then calls gameplay function
-$('#img1').on('click', function(){
+$("#img1").on("click", function(){
 	currentScore += img1;
-	$('#player-currentNum').text(currentScore);
+	$("#player-currentNum").text(currentScore);
 	gamePlay();
 });
 
 
-$('#img2').on('click', function(){
+$("#img2").on("click", function(){
 	currentScore += img2;
-	$('#player-currentNum').text(currentScore);
+	$("#player-currentNum").text(currentScore);
 	gamePlay();
 });
 
 
-$('#img3').on('click', function(){
+$("#img3").on("click", function(){
 	currentScore += img3;
-	$('#player-currentNum').text(currentScore);
+	$("#player-currentNum").text(currentScore);
 	gamePlay();
 });
 
 
-$('#img4').on('click', function(){
+$("#img4").on("click", function(){
 	currentScore += img4;
-	$('#player-currentNum').text(currentScore);
+	$("#player-currentNum").text(currentScore);
 	gamePlay();
 });
-
+}
 
 
 
