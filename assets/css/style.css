@@ -16,6 +16,20 @@ body {
     font-family:fantasy;
 }
 
+#musicControls {
+    position:absolute;
+    padding-left:400px;
+    margin-top:-200px;
+}
+
+#content {
+    width:100%;
+}
+
+#instructions {
+    width:100%;
+}
+
 .main-col, #randomNum, #player-total-score, #player-currentNum, #wins, #losses {
     background-color:lightcoral;
     box-shadow: 1px 1px 5px;

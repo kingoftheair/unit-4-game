@@ -27,13 +27,29 @@ function randomNumGen() {
     $("#randomNum").text(randomNum);
 }
 
+//functions used to call audio files
+    function first_song() {
+		document.getElementById('audiotag1').play();
+    }
+    
+    function second_song() {
+		document.getElementById('audiotag2').play();
+    }
+    
+    function third_song() {
+		document.getElementById('audiotag3').play();
+    }
+    
+    function fourth_song() {
+		document.getElementById('audiotag4').play();
+	}
+
 //keeps track of player wins
 function gamePlay(){
-    
+
 	if (currentScore === randomNum){
 		wins++;
         $("#wins").text(wins);//displays win in html
-
         //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
         $("#player-currentNum").text(currentScore); 
@@ -45,7 +61,6 @@ function gamePlay(){
     else if (currentScore > randomNum){   //keeping track of player losses
 		losses++;
         $("#losses").html(losses); //displays loss in html
-
         //next 2 lines reset the current score and displays that in html
 		currentScore = 0;
         $("#player-currentNum").text(currentScore);
@@ -56,35 +71,41 @@ function gamePlay(){
 }
 
 
+
 //displays random number for user to reach
 $("#randomNum").text(randomNum); {
 
-
 //when click on an crystal image will add number to current score and then calls gameplay function
 $("#img1").on("click", function(){
+    const rollSound = new Audio("../audio/marching.wav");
+    $("#img1").click(e => rollSound.play());
 	currentScore += img1;
-	$("#player-currentNum").text(currentScore);
-	gamePlay();
+    $("#player-currentNum").text(currentScore);
+    first_song(); //calling audio function
+    gamePlay();
 });
 
 
 $("#img2").on("click", function(){
 	currentScore += img2;
-	$("#player-currentNum").text(currentScore);
+    $("#player-currentNum").text(currentScore);
+    second_song();//calling audio function
 	gamePlay();
 });
 
 
 $("#img3").on("click", function(){
 	currentScore += img3;
-	$("#player-currentNum").text(currentScore);
+    $("#player-currentNum").text(currentScore);
+    third_song();//calling audio function
 	gamePlay();
 });
 
 
 $("#img4").on("click", function(){
 	currentScore += img4;
-	$("#player-currentNum").text(currentScore);
+    $("#player-currentNum").text(currentScore);
+    fourth_song();//calling audio function
 	gamePlay();
 });
 }
